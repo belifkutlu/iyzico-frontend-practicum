@@ -1,38 +1,19 @@
-let days = [
-  "Pazar",
-  "Pazartesi",
-  "Salı",
-  "Çarşamba",
-  "Perşembe",
-  "Cuma",
-  "Cumartesi",
-];
-let Name = prompt("Adınız Nedir?");
-let myName = document.querySelector("#myName");
+let myName = prompt("Adınız Nedir?");
+let myNameDOM = document.querySelector("#myName");
 
-if (Name) {
-  myName.innerHTML = `${Name} `;
+if (myName) {
+  myNameDOM.innerHTML = `${myName} `;
+  clockFunction();
 } else {
   alert("Bir isim giriniz.");
   location.reload();
 }
 
+/* Another Method */
 function clockFunction() {
-  let dateTime = new Date();
-  let day = days[dateTime.getDay()];
-  let hrs = dateTime.getHours();
-  let min = dateTime.getMinutes();
-  let sec = dateTime.getSeconds();
-  document.querySelector(
-    "#myClock"
-  ).innerHTML = `${hrs}: ${min}: ${sec}  ${day}`;
+  let clockDOM = document.getElementById("myClock");
+  let date = new Date().toLocaleString("tr-TR");
+  clockDOM.innerHTML = date;
 }
 
 setInterval(clockFunction, 1000);
-
-/* Another Method */
-// function clockFunction() {
-//   let date = new Date().toLocaleString("tr-TR");
-//   document.getElementById("myClock").innerHTML = date;
-// }
-// setInterval(clockFunction, 1000);
