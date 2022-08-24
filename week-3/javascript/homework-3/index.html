@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asian Kitchen</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zilla+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Boostrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <body>
+      <div class="container">
+        <section class="menu">
+          <!-- title -->
+          <div class="title">
+            <h2>Asian Kitchen's Menu</h2>
+          </div>
+          <!-- filter buttons-->
+          <div class="btn-container">
+            <button
+              onclick="clickBtn(this)"
+              class="btn btn-outline-dark btn-item"
+              data-id="all"
+            >
+              All</button
+            ><button
+              onclick="clickBtn(this)"
+              class="btn btn-outline-dark btn-item"
+              data-id="Korea"
+            >
+              Korea</button
+            ><button
+              onclick="clickBtn(this)"
+              class="btn btn-outline-dark btn-item"
+              data-id="Japan"
+            >
+              Japan</button
+            ><button
+              onclick="clickBtn(this)"
+              class="btn btn-outline-dark btn-item"
+              data-id="China"
+            >
+              China
+            </button>
+          </div>
+          <!-- menu items -->
+          <div id="parent" class="section-center row"></div>
+        </section>
+      </div>
+
+      <!-- javascript -->
+      <script src="app.js"></script>
+
+      <textarea
+        id="BFI_DATA"
+        style="width: 1px; height: 1px; display: none"
+      ></textarea
+      ><title> </title>
+      <div
+        id="WidgetFloaterPanels"
+        translate="no"
+        style="
+          display: none;
+          text-align: left;
+          direction: ltr;
+          visibility: hidden;
+        "
+        class="LTRStyle"
+      >
+        <div
+          id="WidgetFloater"
+          style="display: none"
+          onmouseover="Microsoft.Translator.OnMouseOverFloater()"
+          onmouseout="Microsoft.Translator.OnMouseOutFloater()"
+        >
+          <div id="WidgetLogoPanel">
+            <span id="WidgetTranslateWithSpan"
+              ><span>TRANSLATE with </span><img id="FloaterLogo"
+            /></span>
+            <span
+              id="WidgetCloseButton"
+              title="Exit Translation"
+              onclick="Microsoft.Translator.FloaterOnClose()"
+              >x</span
+            >
+          </div>
+          <div id="LanguageMenuPanel">
+            <div class="DDStyle_outer">
+              <input
+                name="LanguageMenu_svid"
+                type="text"
+                id="LanguageMenu_svid"
+                style="display: none"
+                autocomplete="on"
+                value="en"
+                onclick="this.select()"
+              />
+              <input
+                name="LanguageMenu_textid"
+                type="text"
+                id="LanguageMenu_textid"
+                style="display: none"
+                autocomplete="on"
+                onclick="this.select()"
+              />
+              <span tabindex="0" class="DDStyle" id="__LanguageMenu_header"
+                >English</span
+              >
+            </div>
+          </div>
+          <div id="CTFLinksPanel">
+            <span id="ExternalLinksPanel"
+              ><a
+                id="HelpLink"
+                title="Help"
+                target="_blank"
+                href="https://go.microsoft.com/?linkid=9722454"
+              >
+                <img id="HelpImg"
+              /></a>
+              <a
+                id="EmbedLink"
+                href="javascript:Microsoft.Translator.FloaterShowEmbed()"
+                title="Get this widget for your own site"
+              >
+                <img id="EmbedImg"
+              /></a>
+              <a
+                id="ShareLink"
+                title="Share translated page with friends"
+                href="javascript:Microsoft.Translator.FloaterShowSharePanel()"
+              >
+                <img id="ShareImg"
+              /></a>
+            </span>
+          </div>
+          <div id="FloaterProgressBar"><span id="ProgressFill"></span></div>
+        </div>
+        <div
+          id="WidgetFloaterCollapsed"
+          style="display: none"
+          onmouseover="Microsoft.Translator.OnMouseOverFloater()"
+        >
+          <span>TRANSLATE with </span><img id="CollapsedLogoImg" />
+        </div>
+        <div id="FloaterSharePanel" style="display: none">
+          <div id="ShareTextDiv">
+            <span id="ShareTextSpan"> COPY THE URL BELOW </span>
+          </div>
+          <div id="ShareTextboxDiv">
+            <input
+              name="ShareTextbox"
+              type="text"
+              id="ShareTextbox"
+              readonly="readonly"
+              onclick="this.select()"
+            />
+            <!--a id="TwitterLink" title="Share on Twitter"> <img id="TwitterImg" /></a> <a-- id="FacebookLink" title="Share on Facebook"> <img id="FacebookImg" /></a-->
+            <a id="EmailLink" title="Email this translation">
+              <img id="EmailImg"
+            /></a>
+          </div>
+          <div id="ShareFooter">
+            <span id="ShareHelpSpan"
+              ><a id="ShareHelpLink"> <img id="ShareHelpImg" /></a
+            ></span>
+            <span id="ShareBackSpan"
+              ><a
+                id="ShareBack"
+                href="javascript:Microsoft.Translator.FloaterOnShareBackClick()"
+                title="Back To Translation"
+              >
+                Back</a
+              ></span
+            >
+          </div>
+          <input
+            name="EmailSubject"
+            type="hidden"
+            id="EmailSubject"
+            value="Check out this page in {0} translated from {1}"
+          />
+          <input
+            name="EmailBody"
+            type="hidden"
+            id="EmailBody"
+            value="Translated: {0}%0d%0aOriginal: {1}%0d%0a%0d%0aAutomatic translation powered by Microsoft® Translator%0d%0ahttp://www.bing.com/translator?ref=MSTWidget"
+          />
+          <input
+            type="hidden"
+            id="ShareHelpText"
+            value="This link allows visitors to launch this page and automatically translate it to {0}."
+          />
+        </div>
+        <div id="FloaterEmbed" style="display: none">
+          <div id="EmbedTextDiv">
+            <span id="EmbedTextSpan">EMBED THE SNIPPET BELOW IN YOUR SITE</span>
+            <a
+              id="EmbedHelpLink"
+              title="Copy this code and place it into your HTML."
+            >
+              <img id="EmbedHelpImg"
+            /></a>
+          </div>
+          <div id="EmbedTextboxDiv">
+            <input
+              name="EmbedSnippetTextBox"
+              type="text"
+              id="EmbedSnippetTextBox"
+              readonly="readonly"
+              value="<div id='MicrosoftTranslatorWidget' class='Dark' style='color:white;background-color:#555555'></div><script type='text/javascript'>setTimeout(function(){var s=document.createElement('script');s.type='text/javascript';s.charset='UTF-8';s.src=((location &amp;&amp; location.href &amp;&amp; location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&amp;ctf=true&amp;ui=true&amp;settings=manual&amp;from=en';var p=document.getElementsByTagName('head')[0]||document.documentElement;p.insertBefore(s,p.firstChild); },0);</script>"
+              onclick="this.select()"
+            />
+          </div>
+          <div id="EmbedNoticeDiv">
+            <span id="EmbedNoticeSpan"
+              >Enable collaborative features and customize widget:
+              <a href="http://www.bing.com/widget/translator" target="_blank"
+                >Bing Webmaster Portal</a
+              ></span
+            >
+          </div>
+          <div id="EmbedFooterDiv">
+            <span id="EmbedBackSpan"
+              ><a
+                href="javascript:Microsoft.Translator.FloaterOnEmbedBackClick()"
+                title="Back To Translation"
+                >Back</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>
