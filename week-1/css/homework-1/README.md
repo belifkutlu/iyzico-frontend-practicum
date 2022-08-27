@@ -13,7 +13,9 @@
 
 ## Project View
 
-![Project Screenshot](./assets/Ekran%20Kayd%C4%B1%202022-08-27%2014.07.42.mov)
+![Project Screenshot 1](./assets/127.0.0.1_5500_week-1_css_homework-1_index.html.png)
+![Project Screenshot 2](./assets/127.0.0.1_5500_week-1_css_homework-1_about-us.html.png)
+![Project Screenshot 3](./assets/127.0.0.1_5500_week-1_css_homework-1_contact.html.png)
 
 ## Project Details
 
